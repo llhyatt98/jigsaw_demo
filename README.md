@@ -1,8 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JigsawStack SDK Demo with Perplexity AI Clone
+
+This project demonstrates the integration of [JigsawStack SDK](https://jigsawstack.com/) with Next.js, featuring a Perplexity-like search interface for web search, image results, and source browsing.
+
+## About JigsawStack SDK
+
+JigsawStack is a powerful SDK that provides web scraping, AI-powered search, and other capabilities. This demo showcases:
+
+- Web search functionality with AI-enhanced results
+- Image search capabilities
+- Source extraction and citation from search results
+- AI-generated overviews of search topics
+
+## Features
+
+- **Perplexity-style Search Interface**: A clean, dark-themed UI with tabbed navigation
+- **Real-time AI-powered Results**: Get AI-enhanced search results with sources
+- **Multiple Result Types**: View search summaries, image galleries, and source lists
+- **Responsive Design**: Works well on mobile and desktop devices
 
 ## Getting Started
 
-First, run the development server:
+1. Clone this repository
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +39,31 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Accessing the Perplexity Clone
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- From the home page, click on the "Perplexity Search" link
+- Or navigate directly to [http://localhost:3000/perplexity](http://localhost:3000/perplexity)
+- Enter any search query in the search box and click the search button
+- Navigate between the Search, Images, and Sources tabs to explore different result types
 
-## Learn More
+## API Details
 
-To learn more about Next.js, take a look at the following resources:
+The application uses a custom API route at `/api/perplexity` that accepts a `query` parameter. This route uses JigsawStack's web search functionality to fetch results and return them in a structured format.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Example API call:
+```
+GET /api/perplexity?query=What%20is%20the%20capital%20of%20France
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Timeout Handling
 
-## Deploy on Vercel
+Search requests have a built-in 30-second timeout to prevent hanging requests. If you experience timeouts, try simplifying your query.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- This is a demo project and uses a sample API key
+- For production use, secure your API key using environment variables
