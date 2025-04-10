@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -22,6 +23,12 @@ export default function Home() {
           </li>
           <li className="tracking-[-.01em]">
             Save and see your changes instantly.
+          </li>
+          <li className="mt-2 tracking-[-.01em]">
+            Visit the <Link href="/jigsaw" className="text-blue-600 hover:underline">Jigsaw Demo</Link> to see the JigsawStack SDK in action.
+          </li>
+          <li className="mt-2 tracking-[-.01em]">
+            Try our <Link href="/perplexity" className="text-blue-600 hover:underline">Perplexity Search</Link> powered by JigsawStack.
           </li>
         </ol>
 

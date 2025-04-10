@@ -24,3 +24,27 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Dark theme specific styles for the perplexity page */
+.perplexity-dark ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.perplexity-dark ::-webkit-scrollbar-track {
+  background: rgb(22, 27, 34);
+}
+
+.perplexity-dark ::-webkit-scrollbar-thumb {
+  background: rgb(58, 68, 86);
+  border-radius: 5px;
+}
+
+.perplexity-dark ::-webkit-scrollbar-thumb:hover {
+  background: rgb(75, 85, 105);
+}
+
+.perplexity-dark ::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: white;
+}
